@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/backgroundmain"
     >
 
     <TextView
@@ -16,9 +17,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="200px"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher_foreground"
-        />
+
 </android.support.constraint.ConstraintLayout>
