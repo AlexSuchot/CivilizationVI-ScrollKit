@@ -1,7 +1,8 @@
 package fr.speleize.civilizationvi_scrollkit;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+
 
 public class MainActivity extends AppCompatActivity {
 
