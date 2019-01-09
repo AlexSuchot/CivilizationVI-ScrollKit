@@ -3,4 +3,7 @@
     <string name="civilizationsTitle">Civilisations</string>
     <string name="unitsTitle">Unités</string>
     <string name="buildingsTitle">Bâtiments</string>
+    <string name="leadersTitle">Dirigeants</string>
+    <string name="wondersTitle">Merveilles</string>
+    <string name="ressourcesTitle">Ressources</string>
 </resources>

@@ -40,4 +40,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void goToWonders(View view){
+
+    }
+
+    public void goToLeaders(View view){
+
+    }
+
+    public void goToRessources(View view){
+
+    }
 }

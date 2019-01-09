@@ -30,6 +30,22 @@
             android:name=".UnitsActivity"
             android:label="@string/unitsTitle"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/DefaultTheme" />
+
+        <activity
+            android:name=".WondersActivity"
+            android:label="Merveilles"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/DefaultTheme"/>
+        <activity
+            android:name=".LeadersActivity"
+            android:label="Dirigeants"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/DefaultTheme"/>
+        <activity
+            android:name=".RessourcesActivity"
+            android:label="Ressources"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/DefaultTheme"></activity>
     </application>
 
