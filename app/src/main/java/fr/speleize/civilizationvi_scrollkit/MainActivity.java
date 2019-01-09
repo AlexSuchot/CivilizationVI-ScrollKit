@@ -22,10 +22,11 @@ public class MainActivity extends AppCompatActivity {
         textView.setTypeface(PermanentMarkerRegular);
     }
 
+
+    // BUTTONS :
     public void goToCivilizations(View view){
         Intent intent = new Intent(this, BuildingsActivity.class);
         startActivity(intent);
-
 
     }
 
@@ -42,14 +43,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToWonders(View view){
+        Intent intent = new Intent(this, WondersActivity.class);
+        startActivity(intent);
 
     }
 
     public void goToLeaders(View view){
+        Intent intent = new Intent(this, LeadersActivity.class);
+        startActivity(intent);
 
     }
 
     public void goToRessources(View view){
+        Intent intent = new Intent(this, RessourcesActivity.class);
+        startActivity(intent);
 
     }
 }

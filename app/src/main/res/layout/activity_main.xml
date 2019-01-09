@@ -11,11 +11,11 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="72dp"
         android:text="@string/app_name"
         android:textColor="#FFF"
         android:textFontWeight="2dp"
-        android:textSize="26sp"
+        android:textSize="28sp"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,7 +26,7 @@
         android:id="@+id/goToCivilizations"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="152dp"
         android:background="@drawable/buttondesign"
         android:elevation="8dp"
         android:onClick="goToCivilizations"
@@ -42,7 +42,7 @@
         android:id="@+id/goToUnits"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="222dp"
         android:background="@drawable/buttondesign"
         android:elevation="8dp"
         android:onClick="goToUnits"
@@ -55,30 +55,14 @@
 
     <Button
 
-        android:id="@+id/goToBuildings"
+        android:id="@+id/goToRessources"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="292dp"
         android:background="@drawable/buttondesign"
         android:elevation="8dp"
-        android:onClick="goToBuildings"
-        android:text="@string/buildingsTitle"
-        android:textColor="#000"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-
-        android:id="@+id/goToWonders"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="372dp"
-        android:background="@drawable/buttondesign"
-        android:elevation="8dp"
-        android:onClick="goToWonders"
-        android:text="@string/wondersTitle"
+        android:onClick="goToRessources"
+        android:text="@string/ressourcesTitle"
         android:textColor="#000"
 
         app:layout_constraintLeft_toLeftOf="parent"
@@ -90,7 +74,7 @@
         android:id="@+id/goToLeaders"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="362dp"
         android:background="@drawable/buttondesign"
         android:elevation="8dp"
         android:onClick="goToLeaders"
@@ -103,14 +87,31 @@
 
     <Button
 
-        android:id="@+id/goToRessources"
+        android:id="@+id/goToWonders"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="432dp"
         android:background="@drawable/buttondesign"
         android:elevation="8dp"
-        android:onClick="goToRessources"
-        android:text="@string/ressourcesTitle"
+        android:onClick="goToWonders"
+        android:text="@string/wondersTitle"
+        android:textColor="#000"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+
+        android:id="@+id/goToBuildings"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="502dp"
+        android:background="@drawable/buttondesign"
+        android:elevation="8dp"
+        android:onClick="goToBuildings"
+        android:text="@string/buildingsTitle"
         android:textColor="#000"
 
         app:layout_constraintLeft_toLeftOf="parent"

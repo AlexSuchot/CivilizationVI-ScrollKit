@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import fr.speleize.civilizationvi_scrollkit.classes.Leader;
+
 public class DatabaseManager extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "civilization.db";
@@ -120,6 +122,21 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+    public void insertCivilization(String name, String description, String image, Leader leader, String continent, String bonus, String specialUnit, String specialBuilding, String victoryType){
+        name = name.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        continent = continent.replace("'", "''");
+        bonus = bonus.replace("'", "''");
+        specialUnit = specialUnit.replace("'", "''");
+        specialBuilding = specialBuilding.replace("'", "''");
+        victoryType = victoryType.replace("'", "''");
+
+        String civilizationsSql = "INSERT INTO civilizations (name, description, image, leader, continent, bonus, specialUnit, specialBuilding, victoryType) values ('"
+                                + name + "', " + description + ", " + image + ", " + continent + ", " + bonus + ", " + specialUnit + ", " + ", " + specialBuilding + ", " + victoryType + ")";
 
     }
 }
