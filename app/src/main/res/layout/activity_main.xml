@@ -4,33 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@drawable/mainbackground"
-    >
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:text="@string/app_name"
         android:textColor="#FFF"
-        android:textSize="22sp"
+        android:textFontWeight="2dp"
+        android:textSize="26sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_width="100dp"
+
+        android:id="@+id/goToCivilizations"
+        android:onClick="goToCivilizations"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/buttondesign"
+        android:elevation="8dp"
+        android:text="@string/civilizationsTitle"
+        android:textColor="#000"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginTop="200dp"
-        android:text="Button"/>
+    <Button
 
+        android:id="@+id/goToUnits"
+        android:onClick="goToUnits"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/buttondesign"
+        android:elevation="8dp"
+        android:text="@string/unitsTitle"
+        android:textColor="#000"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+
+        android:id="@+id/goToBuildings"
+        android:onClick="goToBuildings"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/buttondesign"
+        android:elevation="8dp"
+        android:text="@string/buildingsTitle"
+        android:textColor="#000"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
