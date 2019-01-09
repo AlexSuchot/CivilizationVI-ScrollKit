@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Civilization VI - ScrollKit</string>
-    <string name="civilizationsTitle">Civilizations</string>
-    <string name="unitsTitle">Units</string>
-    <string name="buildingsTitle">Buildings</string>
+    <string name="app_name" translatable="false">Civilization VI - ScrollKit</string>
+    <string name="civilizationsTitle">Civilisations</string>
+    <string name="unitsTitle">Unités</string>
+    <string name="buildingsTitle">Bâtiments</string>
 </resources>
