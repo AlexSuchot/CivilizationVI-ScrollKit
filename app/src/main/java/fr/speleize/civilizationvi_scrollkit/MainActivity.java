@@ -4,6 +4,7 @@ package fr.speleize.civilizationvi_scrollkit;
         import android.graphics.Typeface;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.view.View;
         import android.widget.TextView;
 
 
@@ -21,17 +22,22 @@ public class MainActivity extends AppCompatActivity {
         textView.setTypeface(PermanentMarkerRegular);
     }
 
-    public static void goToCivilizations(){
-        Intent intent = new Intent(this, );
+    public void goToCivilizations(View view){
+        Intent intent = new Intent(this, BuildingsActivity.class);
+        startActivity(intent);
 
 
     }
 
-    public static void goToBuildings(){
+    public void goToBuildings(View view){
+        Intent intent = new Intent(this, BuildingsActivity.class);
+        startActivity(intent);
 
     }
 
-    public static void goToUnits(){
+    public void goToUnits(View view){
+        Intent intent = new Intent(this, UnitsActivity.class);
+        startActivity(intent);
 
     }
 }
