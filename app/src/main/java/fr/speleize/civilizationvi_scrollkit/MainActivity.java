@@ -10,6 +10,7 @@ package fr.speleize.civilizationvi_scrollkit;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,25 +1,22 @@
 package fr.speleize.civilizationvi_scrollkit.classes;
 
-public class Building {
+public class Ressource {
     private String name;
     private String description;
     private String image;
     private String bonus;
-    private String period;
-    private Integer baseGoldCost;
-    private String productionCost;
+    private String typeOfRessource;
 
-    public Building(String name, String description, String image, String bonus, String period, Integer baseGoldCost, String productionCost) {
+    public Ressource(String name, String description, String image, String bonus, String typeOfRessource) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.bonus = bonus;
-        this.period = period;
-        this.baseGoldCost = baseGoldCost;
-        this.productionCost = productionCost;
+        this.typeOfRessource = typeOfRessource;
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -51,29 +48,11 @@ public class Building {
         this.bonus = bonus;
     }
 
-    public String getPeriod() {
-        return period;
+    public String getTypeOfRessource() {
+        return typeOfRessource;
     }
 
-    public void setPeriod(String period) {
-        this.period = period;
-    }
-
-    public Integer getBaseGoldCost() {
-        return baseGoldCost;
-    }
-
-    public void setBaseGoldCost(Integer baseGoldCost) {
-        this.baseGoldCost = baseGoldCost;
-    }
-
-    public String getProductionCost() {
-        return productionCost;
-    }
-
-    public void setProductionCost(String productionCost) {
-        this.productionCost = productionCost;
+    public void setTypeOfRessource(String typeOfRessource) {
+        this.typeOfRessource = typeOfRessource;
     }
 }
-
-

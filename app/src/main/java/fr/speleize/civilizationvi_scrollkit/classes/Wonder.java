@@ -1,22 +1,30 @@
 package fr.speleize.civilizationvi_scrollkit.classes;
 
-public class Building {
+import java.util.Date;
+
+public class Wonder {
     private String name;
     private String description;
     private String image;
+    private String constructor;
     private String bonus;
+    private String type;
     private String period;
-    private Integer baseGoldCost;
+    private String location;
     private String productionCost;
+    private Date dateOfFoundation;
 
-    public Building(String name, String description, String image, String bonus, String period, Integer baseGoldCost, String productionCost) {
+    public Wonder(String name, String description, String image, String constructor, String bonus, String type, String period, String location, String productionCost, Date dateOfFoundation) {
         this.name = name;
         this.description = description;
         this.image = image;
+        this.constructor = constructor;
         this.bonus = bonus;
+        this.type = type;
         this.period = period;
-        this.baseGoldCost = baseGoldCost;
+        this.location = location;
         this.productionCost = productionCost;
+        this.dateOfFoundation = dateOfFoundation;
     }
 
     public String getName() {
@@ -43,12 +51,28 @@ public class Building {
         this.image = image;
     }
 
+    public String getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(String constructor) {
+        this.constructor = constructor;
+    }
+
     public String getBonus() {
         return bonus;
     }
 
     public void setBonus(String bonus) {
         this.bonus = bonus;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getPeriod() {
@@ -59,12 +83,12 @@ public class Building {
         this.period = period;
     }
 
-    public Integer getBaseGoldCost() {
-        return baseGoldCost;
+    public String getLocation() {
+        return location;
     }
 
-    public void setBaseGoldCost(Integer baseGoldCost) {
-        this.baseGoldCost = baseGoldCost;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getProductionCost() {
@@ -74,6 +98,12 @@ public class Building {
     public void setProductionCost(String productionCost) {
         this.productionCost = productionCost;
     }
+
+    public Date getDateOfFoundation() {
+        return dateOfFoundation;
+    }
+
+    public void setDateOfFoundation(Date dateOfFoundation) {
+        this.dateOfFoundation = dateOfFoundation;
+    }
 }
-
-

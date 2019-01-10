@@ -24,91 +24,91 @@ public class DatabaseManager extends SQLiteOpenHelper {
         // CREATION DE LA TABLE DES CIVILISATIONS :
 
         String civilizationsSql = "CREATE TABLE civilizations ("
-                                + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                                + "     name text NOT NULL,"
-                                + "     description text NOT NULL,"
-                                + "     image text NOT NULL,"
-                                + "     leader text NOT NULL,"
-                                + "     continent text NOT NULL,"
-                                + "     bonus text NOT NULL,"
-                                + "     specialUnit text NOT NULL,"
-                                + "     specialBuilding text NOT NULL,"
-                                + "     victoryType text NOT NULL"
-                                + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     leader text NOT NULL,"
+                + "     continent text NOT NULL,"
+                + "     bonus text NOT NULL,"
+                + "     specialUnit text NOT NULL,"
+                + "     specialBuilding text NOT NULL,"
+                + "     victoryType text NOT NULL"
+                + ")";
 
         // CREATION DE LA TABLE DES UNITES :
 
         String unitsSql = "CREATE TABLE units ("
-                        + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                        + "     name text NOT NULL,"
-                        + "     description text NOT NULL,"
-                        + "     image text NOT NULL,"
-                        + "     type text NOT NULL,"
-                        + "     damage integer,"
-                        + "     rangeDamage integer,"
-                        + "     range integer," // Portée d'attaque
-                        + "     movementPoint integer NOT NULL,"
-                        + "     period text NOT NULL,"
-                        + "     civilization text,"
-                        + "     productionCost text NOT NULL,"
-                        + "     typeOfProduction text NOT NULL,"
-                        + "     baseGoldCost integer NOT NULL"
-                        + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     type text NOT NULL,"
+                + "     damage integer,"
+                + "     rangeDamage integer,"
+                + "     range integer," // Portée d'attaque
+                + "     movementPoint integer NOT NULL,"
+                + "     period text NOT NULL,"
+                + "     civilization text,"
+                + "     productionCost text NOT NULL,"
+                + "     typeOfProduction text NOT NULL,"
+                + "     baseGoldCost integer NOT NULL"
+                + ")";
 
         // CREATION DE LA TABLE DES BATIMENTS :
 
         String buildingsSql = "CREATE TABLE buildings ("
-                            + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                            + "     name text NOT NULL,"
-                            + "     description text NOT NULL,"
-                            + "     image text NOT NULL,"
-                            + "     bonus text NOT NULL,"
-                            + "     period text NOT NULL,"
-                            + "     baseGoldCost integer NOT NULL,"
-                            + "     productionCost text NOT NULL"
-                            + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     bonus text NOT NULL,"
+                + "     period text NOT NULL,"
+                + "     baseGoldCost integer NOT NULL,"
+                + "     productionCost text NOT NULL"
+                + ")";
 
         // CREATION DE LA TABLE DES RESSOURCES :
 
         String ressourcesSql = "CREATE TABLE ressources ("
-                             + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                             + "     name text NOT NULL,"
-                             + "     description text NOT NULL,"
-                             + "     image text NOT NULL,"
-                             + "     bonus text NOT NULL,"
-                             + "     typeOfRessource text NOT NULL"
-                             + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     bonus text NOT NULL,"
+                + "     typeOfRessource text NOT NULL"
+                + ")";
 
         // CREATION DE LA TABLE DES DIRIGEANTS :
 
         String leadersSql = "CREATE TABLE leaders ("
-                          + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                          + "     name text NOT NULL,"
-                          + "     function text NOT NULL,"
-                          + "     description text NOT NULL,"
-                          + "     image text NOT NULL,"
-                          + "     dateOfBirth date NOT NULL,"
-                          + "     dateOfDeath date NOT NULL,"
-                          + "     reign integer NOT NULL,"
-                          + "     bonus text NOT NULL,"
-                          + "     country text NOT NULL,"
-                          + "     civilization text NOT NULL"
-                          + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     function text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     dateOfBirth date NOT NULL,"
+                + "     dateOfDeath date NOT NULL,"
+                + "     reign integer NOT NULL,"
+                + "     bonus text NOT NULL,"
+                + "     civilization text NOT NULL"
+                + ")";
 
         // CREATION DE LA TABLE DES MERVEILLES :
 
         String wondersSql = "CREATE TABLE wonders ("
-                            + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                            + "     name text NOT NULL,"
-                            + "     description text NOT NULL,"
-                            + "     image text NOT NULL,"
-                            + "     constructor text,"
-                            + "     bonus text,"
-                            + "     type text NOT NULL,"
-                            + "     period text,"
-                            + "     location text NOT NULL,"
-                            + "     dateOfFoundation date"
-                            + ")";
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     constructor text,"
+                + "     bonus text,"
+                + "     type text NOT NULL,"
+                + "     period text,"
+                + "     location text NOT NULL,"
+                + "     productionCost text,"
+                + "     dateOfFoundation date"
+                + ")";
 
         // CREATION DES TABLES :
         db.execSQL(civilizationsSql);
@@ -125,7 +125,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     }
 
-    public void insertCivilization(String name, String description, String image, Leader leader, String continent, String bonus, String specialUnit, String specialBuilding, String victoryType){
+    public void insertCivilization(String name, String description, String image, Leader leader, String continent, String bonus, String specialUnit, String specialBuilding, String victoryType) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
         image = image.replace("'", "''");
@@ -136,7 +136,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
         victoryType = victoryType.replace("'", "''");
 
         String civilizationsSql = "INSERT INTO civilizations (name, description, image, leader, continent, bonus, specialUnit, specialBuilding, victoryType) values ('"
-                                + name + "', " + description + ", " + image + ", " + continent + ", " + bonus + ", " + specialUnit + ", " + ", " + specialBuilding + ", " + victoryType + ")";
+                + name + "', " + description + ", " + image + ", " + continent + ", " + bonus + ", " + specialUnit + ", " + ", " + specialBuilding + ", " + victoryType + ")";
+
+        this.getWritableDatabase().execSQL(civilizationsSql);
 
     }
 }
