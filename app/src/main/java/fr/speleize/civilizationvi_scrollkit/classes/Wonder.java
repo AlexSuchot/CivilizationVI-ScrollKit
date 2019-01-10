@@ -11,10 +11,10 @@ public class Wonder {
     private String type;
     private String period;
     private String location;
-    private String productionCost;
+    private Integer productionCost;
     private Date dateOfFoundation;
 
-    public Wonder(String name, String description, String image, String constructor, String bonus, String type, String period, String location, String productionCost, Date dateOfFoundation) {
+    public Wonder(String name, String description, String image, String constructor, String bonus, String type, String period, String location, Integer productionCost, Date dateOfFoundation) {
         this.name = name;
         this.description = description;
         this.image = image;
@@ -91,11 +91,11 @@ public class Wonder {
         this.location = location;
     }
 
-    public String getProductionCost() {
+    public Integer getProductionCost() {
         return productionCost;
     }
 
-    public void setProductionCost(String productionCost) {
+    public void setProductionCost(Integer productionCost) {
         this.productionCost = productionCost;
     }
 

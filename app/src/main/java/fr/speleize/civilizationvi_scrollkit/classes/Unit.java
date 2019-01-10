@@ -10,11 +10,11 @@ public class Unit {
     private Integer movementPoint;
     private String period;
     private Civilization civilization;
-    private String productionCost;
+    private Integer productionCost;
     private String typeOfProduction;
     private Integer baseGoldCost;
 
-    public Unit(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer movementPoint, String period, Civilization civilization, String productionCost, String typeOfProduction, Integer baseGoldCost) {
+    public Unit(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer movementPoint, String period, Civilization civilization, Integer productionCost, String typeOfProduction, Integer baseGoldCost) {
         this.name = name;
         this.description = description;
         this.image = image;
@@ -94,11 +94,11 @@ public class Unit {
         this.civilization = civilization;
     }
 
-    public String getProductionCost() {
+    public Integer getProductionCost() {
         return productionCost;
     }
 
-    public void setProductionCost(String productionCost) {
+    public void setProductionCost(Integer productionCost) {
         this.productionCost = productionCost;
     }
 

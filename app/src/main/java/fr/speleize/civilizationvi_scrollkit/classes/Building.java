@@ -7,9 +7,9 @@ public class Building {
     private String bonus;
     private String period;
     private Integer baseGoldCost;
-    private String productionCost;
+    private Integer productionCost;
 
-    public Building(String name, String description, String image, String bonus, String period, Integer baseGoldCost, String productionCost) {
+    public Building(String name, String description, String image, String bonus, String period, Integer baseGoldCost, Integer productionCost) {
         this.name = name;
         this.description = description;
         this.image = image;
@@ -67,11 +67,11 @@ public class Building {
         this.baseGoldCost = baseGoldCost;
     }
 
-    public String getProductionCost() {
+    public Integer getProductionCost() {
         return productionCost;
     }
 
-    public void setProductionCost(String productionCost) {
+    public void setProductionCost(Integer productionCost) {
         this.productionCost = productionCost;
     }
 }
