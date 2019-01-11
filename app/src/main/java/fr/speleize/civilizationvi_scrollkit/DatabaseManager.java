@@ -131,6 +131,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     }
 
+    // REQUETE POUR INSERER UNE CIVILISATION :
+
     public void insertCivilization(String name, String description, String image, Leader leader, String continent, String bonus, Unit specialUnit, Building specialBuilding, String victoryType) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
@@ -144,6 +146,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         this.getWritableDatabase().execSQL(civilizationsSql);
     }
+
+    // REQUETE POUR INSERER UNE UNITE :
 
     public void insertUnits(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer range, Integer movementPoint, String period, Civilization civilization, Integer productionCost, String typeOfProduction, Integer baseGoldCost) {
         name = name.replace("'", "''");
@@ -159,6 +163,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(unitsSql);
     }
 
+    // REQUETE POUR INSERER UN BATIMENT :
+
     public void insertBuildings(String name, String description, String image, String bonus, String period, Integer baseGoldCost, Integer productionCost, String typeOfBuilding) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
@@ -172,6 +178,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(buildingsSql);
     }
 
+    // REQUETE POUR INSERER UNE RESSOURCE :
+
     public void insertRessources(String name, String description, String image, String bonus, String typeOfRessource) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
@@ -184,6 +192,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(ressourcesSql);
     }
 
+    // REQUETE POUR INSERER UN LEADER :
+
     public void insertLeaders(String name, String function, String description, String image, Date dateOfBirth, Date dateOfDeath, Integer reign, String bonus, Civilization civilization) {
         name = name.replace("'", "''");
         function = function.replace("'", "''");
@@ -195,6 +205,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + name + "', " + function + ", " + description + ", " + image + ", " + dateOfBirth + ", " + dateOfDeath + ", " + reign + ", " + bonus + ", " + civilization + ")";
         this.getWritableDatabase().execSQL(leadersSql);
     }
+
+    // REQUETE POUR INSERER UNE MERVEILLE :
 
     public void insertWonders(String name, String description, String image, String constructor, String bonus, String type, String period, String location, Integer productionCost, Date dateOfFoundation) {
         name = name.replace("'", "''");
@@ -210,4 +222,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + name + "', " + description + ", " + image + ", " + image + ", " + constructor + ", " + bonus + ", " + type + ", " + period + ", " + ", " + location + ", " + productionCost + ", " + dateOfFoundation + ")";
         this.getWritableDatabase().execSQL(wondersSql);
     }
+
+
 }
