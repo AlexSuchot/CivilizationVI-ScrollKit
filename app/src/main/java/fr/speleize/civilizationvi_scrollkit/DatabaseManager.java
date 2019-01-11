@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.util.Date;
+
 import fr.speleize.civilizationvi_scrollkit.classes.Building;
 import fr.speleize.civilizationvi_scrollkit.classes.Civilization;
 import fr.speleize.civilizationvi_scrollkit.classes.Leader;
@@ -68,7 +70,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     bonus text NOT NULL,"
                 + "     period text NOT NULL,"
                 + "     baseGoldCost integer NOT NULL,"
-                + "     productionCost integer NOT NULL"
+                + "     productionCost integer NOT NULL,"
+                + "     typeOfBuilding text NOT NULL"
                 + ")";
 
         // CREATION DE LA TABLE DES RESSOURCES :
@@ -140,10 +143,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + name + "', " + description + ", " + image + ", " + continent + ", " + bonus + ", " + specialUnit + ", " + ", " + specialBuilding + ", " + victoryType + ")";
 
         this.getWritableDatabase().execSQL(civilizationsSql);
-
     }
 
-    public void insertUnits(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer range, Integer movementPoint, String period, Civilization civilization, Integer productionCost, String typeOfProduction, Integer baseGoldCost){
+    public void insertUnits(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer range, Integer movementPoint, String period, Civilization civilization, Integer productionCost, String typeOfProduction, Integer baseGoldCost) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
         image = image.replace("'", "''");
@@ -157,38 +159,55 @@ public class DatabaseManager extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(unitsSql);
     }
 
-    public void insertBuildings(String name, String description, String image, String bonus, String period, Integer baseGoldCost, Integer productionCost){
+    public void insertBuildings(String name, String description, String image, String bonus, String period, Integer baseGoldCost, Integer productionCost, String typeOfBuilding) {
         name = name.replace("'", "''");
         description = description.replace("'", "''");
         image = image.replace("'", "''");
-        bonus = bonus.replace("'","''");
-        period = period.replace("'","''");
+        bonus = bonus.replace("'", "''");
+        period = period.replace("'", "''");
+        typeOfBuilding = typeOfBuilding.replace("'", "''");
 
-        String buildingsSql = "INSERT INTO"
-
-
-        String buildingsSql = "CREATE TABLE buildings ("
-                + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                + "     name text NOT NULL,"
-                + "     description text NOT NULL,"
-                + "     image text NOT NULL,"
-                + "     bonus text NOT NULL,"
-                + "     period text NOT NULL,"
-                + "     baseGoldCost integer NOT NULL,"
-                + "     productionCost integer NOT NULL"
-                + ")";
-
+        String buildingsSql = "INSERT INTO buildings (name, description, image, bonus, period, baseGoldCost, productionCost, typeOfBuilding) values ('"
+                + name + "', " + description + ", " + image + ", " + bonus + ", " + period + ", " + baseGoldCost + ", " + productionCost + ", " + typeOfBuilding + ")";
+        this.getWritableDatabase().execSQL(buildingsSql);
     }
 
-    public void insertRessources(){
+    public void insertRessources(String name, String description, String image, String bonus, String typeOfRessource) {
+        name = name.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        bonus = bonus.replace("'", "''");
+        typeOfRessource = typeOfRessource.replace("'", "''");
 
+        String ressourcesSql = "INSERT INTO ressources (name, description, image, bonus, typeOfRessource) values ('"
+                + name + "', " + description + ", " + image + ", " + bonus + ", " + typeOfRessource + ", " + ")";
+        this.getWritableDatabase().execSQL(ressourcesSql);
     }
 
-    public void insertLeaders(){
+    public void insertLeaders(String name, String function, String description, String image, Date dateOfBirth, Date dateOfDeath, Integer reign, String bonus, Civilization civilization) {
+        name = name.replace("'", "''");
+        function = function.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        bonus = bonus.replace("'", "''");
 
+        String leadersSql = "INSERT INTO leaders (name, function, description, image, dateOfBirth, dateOfDeath, reign, bonus, civilization) values ('"
+                + name + "', " + function + ", " + description + ", " + image + ", " + dateOfBirth + ", " + dateOfDeath + ", " + reign + ", " + bonus + ", " + civilization + ")";
+        this.getWritableDatabase().execSQL(leadersSql);
     }
 
-    public void insertWonders(){
+    public void insertWonders(String name, String description, String image, String constructor, String bonus, String type, String period, String location, Integer productionCost, Date dateOfFoundation) {
+        name = name.replace("'", "''");
+        period = period.replace("'", "''");
+        constructor = constructor.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        bonus = bonus.replace("'", "''");
+        type = type.replace("'", "''");
+        location = location.replace("'", "''");
 
+        String wondersSql = "INSERT INTO wonders (name, description, image, constructor, bonus, type, period, location, productionCost, dateOfFoundation) values ('"
+                + name + "', " + description + ", " + image + ", " + image + ", " + constructor + ", " + bonus + ", " + type + ", " + period + ", " + ", " + location + ", " + productionCost + ", " + dateOfFoundation + ")";
+        this.getWritableDatabase().execSQL(wondersSql);
     }
 }
