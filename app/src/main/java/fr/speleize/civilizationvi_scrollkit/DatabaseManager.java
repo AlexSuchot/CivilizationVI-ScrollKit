@@ -144,10 +144,39 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public void insertUnits(String name, String description, String image, String type, Integer damage, Integer rangeDamage, Integer range, Integer movementPoint, String period, Civilization civilization, Integer productionCost, String typeOfProduction, Integer baseGoldCost){
-        
+        name = name.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        type = type.replace("'", "''");
+        period = period.replace("'", "''");
+        typeOfProduction = typeOfProduction.replace("'", "''");
+
+        String unitsSql = "INSERT INTO units (name, description, image, type, damage, rangeDamage, range, movementPoint, period, civilization, productionCost, typeOfProduction, baseGoldCost) values ('"
+                + name + "', " + description + ", " + image + ", " + type + ", " + ", " + damage + ", " + rangeDamage + ", " + range +
+                ", " + movementPoint + ", " + period + ", " + civilization + ", " + productionCost + ", " + typeOfProduction + ", " + baseGoldCost + ")";
+        this.getWritableDatabase().execSQL(unitsSql);
     }
 
-    public void insertBuildings(){
+    public void insertBuildings(String name, String description, String image, String bonus, String period, Integer baseGoldCost, Integer productionCost){
+        name = name.replace("'", "''");
+        description = description.replace("'", "''");
+        image = image.replace("'", "''");
+        bonus = bonus.replace("'","''");
+        period = period.replace("'","''");
+
+        String buildingsSql = "INSERT INTO"
+
+
+        String buildingsSql = "CREATE TABLE buildings ("
+                + "     id integer PRIMARY KEY AUTOINCREMENT,"
+                + "     name text NOT NULL,"
+                + "     description text NOT NULL,"
+                + "     image text NOT NULL,"
+                + "     bonus text NOT NULL,"
+                + "     period text NOT NULL,"
+                + "     baseGoldCost integer NOT NULL,"
+                + "     productionCost integer NOT NULL"
+                + ")";
 
     }
 
