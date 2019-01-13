@@ -8,6 +8,8 @@ package fr.speleize.civilizationvi_scrollkit;
         import android.widget.ImageView;
         import android.widget.TextView;
 
+        import fr.speleize.civilizationvi_scrollkit.classes.Civilization;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +24,18 @@ public class MainActivity extends AppCompatActivity {
                 "font/penumbra.ttf");
         TextView textView = findViewById(R.id.title);
         textView.setTypeface(PermanentMarkerRegular);
+
+        DatabaseManager databaseManager = new DatabaseManager(this);
+
+        // INSERT DATA INTO CIVILIZATIONS :
+
+
     }
 
 
     // BUTTONS :
     public void goToCivilizations(View view){
-        Intent intent = new Intent(this, BuildingsActivity.class);
+        Intent intent = new Intent(this, CivilizationsActivity.class);
         startActivity(intent);
 
     }

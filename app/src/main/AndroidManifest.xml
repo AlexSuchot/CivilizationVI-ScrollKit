@@ -20,7 +20,7 @@
             android:name=".CivilizationsActivity"
             android:label="@string/civilizationsTitle"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/MainTheme" />
+            android:theme="@style/DefaultTheme" />
         <activity
             android:name=".BuildingsActivity"
             android:label="@string/buildingsTitle"
