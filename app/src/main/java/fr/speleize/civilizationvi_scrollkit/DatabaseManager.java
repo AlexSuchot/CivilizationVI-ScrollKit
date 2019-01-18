@@ -28,7 +28,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         // CREATION DE LA TABLE DES CIVILISATIONS :
 
-        String civilizationsSql = "CREATE TABLE civilizations ("
+       /* String civilizationsSql = "CREATE TABLE civilizations ("
                 + "     id integer PRIMARY KEY AUTOINCREMENT,"
                 + "     name text NOT NULL,"
                 + "     description text NOT NULL,"
@@ -40,10 +40,11 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     specialBuilding text NOT NULL,"
                 + "     victoryType text NOT NULL"
                 + ")";
+        db.execSQL(civilizationsSql);*/
 
         // CREATION DE LA TABLE DES UNITES :
 
-        String unitsSql = "CREATE TABLE units ("
+        /*String unitsSql = "CREATE TABLE units ("
                 + "     id integer PRIMARY KEY AUTOINCREMENT,"
                 + "     name text NOT NULL,"
                 + "     description text NOT NULL,"
@@ -59,10 +60,11 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     typeOfProduction text NOT NULL,"
                 + "     baseGoldCost integer NOT NULL"
                 + ")";
+        db.execSQL(unitsSql);*/
 
         // CREATION DE LA TABLE DES BATIMENTS :
 
-        String buildingsSql = "CREATE TABLE buildings ("
+       /* String buildingsSql = "CREATE TABLE buildings ("
                 + "     id integer PRIMARY KEY AUTOINCREMENT,"
                 + "     name text NOT NULL,"
                 + "     description text NOT NULL,"
@@ -73,21 +75,23 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     productionCost integer NOT NULL,"
                 + "     typeOfBuilding text NOT NULL"
                 + ")";
+        db.execSQL(buildingsSql);*/
 
         // CREATION DE LA TABLE DES RESSOURCES :
 
-        String ressourcesSql = "CREATE TABLE ressources ("
-                + "     id integer PRIMARY KEY AUTOINCREMENT,"
-                + "     name text NOT NULL,"
-                + "     description text NOT NULL,"
-                + "     image text NOT NULL,"
-                + "     bonus text NOT NULL,"
-                + "     typeOfRessource text NOT NULL"
+        /*String ressourcesSql = "create table ressources ("
+                + "     id integer primary key autoincrement,"
+                + "     name text not null,"
+                + "     description text not null,"
+                + "     image text not null,"
+                + "     bonus text not null,"
+                + "     typeOfRessource text not null"
                 + ")";
+        db.execSQL(ressourcesSql);*/
 
         // CREATION DE LA TABLE DES DIRIGEANTS :
 
-        String leadersSql = "CREATE TABLE leaders ("
+       /* String leadersSql = "CREATE TABLE leaders ("
                 + "     id integer PRIMARY KEY AUTOINCREMENT,"
                 + "     name text NOT NULL,"
                 + "     function text NOT NULL,"
@@ -99,10 +103,11 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     bonus text NOT NULL,"
                 + "     civilization text NOT NULL"
                 + ")";
+        db.execSQL(leadersSql);*/
 
         // CREATION DE LA TABLE DES MERVEILLES :
 
-        String wondersSql = "CREATE TABLE wonders ("
+       /* String wondersSql = "CREATE TABLE wonders ("
                 + "     id integer PRIMARY KEY AUTOINCREMENT,"
                 + "     name text NOT NULL,"
                 + "     description text NOT NULL,"
@@ -115,14 +120,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + "     productionCost integer,"
                 + "     dateOfFoundation date"
                 + ")";
-
-        // CREATION DES TABLES :
-        db.execSQL(civilizationsSql);
-        db.execSQL(ressourcesSql);
-        db.execSQL(unitsSql);
-        db.execSQL(buildingsSql);
-        db.execSQL(leadersSql);
-        db.execSQL(wondersSql);
+        db.execSQL(wondersSql);*/
 
     }
 
@@ -180,17 +178,17 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     // REQUETE POUR INSERER UNE RESSOURCE :
 
-    public void insertRessources(String name, String description, String image, String bonus, String typeOfRessource) {
-        name = name.replace("'", "''");
+    /*public void insertRessources(String name, String description, String image, String bonus, String typeOfRessource) {
+        *//*name = name.replace("'", "''");
         description = description.replace("'", "''");
         image = image.replace("'", "''");
         bonus = bonus.replace("'", "''");
-        typeOfRessource = typeOfRessource.replace("'", "''");
+        typeOfRessource = typeOfRessource.replace("'", "''");*//*
 
-        String ressourcesSql = "INSERT INTO ressources (name, description, image, bonus, typeOfRessource) values ('"
-                + name + "', " + description + ", " + image + ", " + bonus + ", " + typeOfRessource + ", " + ")";
+        String ressourcesSql = "insert into ressources (name, description, image, bonus, typeOfRessource) values ("
+                + name + ", " + description + ", " + image + ", " + bonus + ", " + typeOfRessource + ")";
         this.getWritableDatabase().execSQL(ressourcesSql);
-    }
+    }*/
 
     // REQUETE POUR INSERER UN LEADER :
 

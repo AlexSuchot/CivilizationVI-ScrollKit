@@ -24,14 +24,13 @@ public class CivilizationsActivity extends AppCompatActivity {
 
         databaseManager = new DatabaseManager(this);
         //databaseManager.insertCivilization();
-        databaseManager.insertRessources("Pierre", "Matière minérale solide, dure, qui forme l'écorce terrestre.", "allemagneLogo", "+2 de productions", "Bonus");
+        //databaseManager.insertRessources("Pierre", "Minérale", "allemagneLogo", "+2 de productions", "Bonus");
         ImageView imageView = findViewById(R.id.logo);
         TextView textView = findViewById(R.id.name);
-        for(Integer i = 0; i < 20; i++){
-            imageView.setImageResource(R.drawable.allemagnelogo);
-            textView.setText("Itération numéro : " + i);
+        String variableValue = "allemagneLogo";
 
+        imageView.setImageResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
+        textView.setText("Itération numéro : ");
 
-        }
     }
 }
