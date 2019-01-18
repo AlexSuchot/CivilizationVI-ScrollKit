@@ -10,21 +10,13 @@ import android.widget.TextView;
 import fr.speleize.civilizationvi_scrollkit.R;
 
 public class RessourcesViewHolder extends RecyclerView.ViewHolder {
-    // Vue intitulé ressources :
+
     private MenuView.ItemView ressourcesView = null;
     private TextView textViewName = null;
     private TextView textViewDescription = null;
     private ImageView imageViewImage = null;
     private TextView textViewBonus = null;
     private TextView textViewTypeOfRessources = null;
-
-    public MenuView.ItemView getRessourcesView() {
-        return ressourcesView;
-    }
-
-    public void setRessourcesView(MenuView.ItemView ressourcesView) {
-        this.ressourcesView = ressourcesView;
-    }
 
     /**
      * Constructeur.
@@ -38,6 +30,14 @@ public class RessourcesViewHolder extends RecyclerView.ViewHolder {
         imageViewImage = itemView.findViewById(R.id.image);
         textViewBonus = itemView.findViewById(R.id.bonus);
         textViewTypeOfRessources = itemView.findViewById(R.id.typeOfRessource);
+    }
+
+    public MenuView.ItemView getRessourcesView() {
+        return ressourcesView;
+    }
+
+    public void setRessourcesView(MenuView.ItemView ressourcesView) {
+        this.ressourcesView = ressourcesView;
     }
 
     public TextView getTextViewName() {

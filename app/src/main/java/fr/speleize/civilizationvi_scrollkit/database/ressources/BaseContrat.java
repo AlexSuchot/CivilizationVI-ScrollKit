@@ -1,4 +1,4 @@
-package fr.speleize.civilizationvi_scrollkit.database;
+package fr.speleize.civilizationvi_scrollkit.database.ressources;
 
 import android.provider.BaseColumns;
 

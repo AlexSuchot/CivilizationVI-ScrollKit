@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.speleize.civilizationvi_scrollkit.classes.Ressource;
-import fr.speleize.civilizationvi_scrollkit.database.BaseContrat;
-import fr.speleize.civilizationvi_scrollkit.database.DatabaseHelper;
 
 public class RessourceDAO {
 

@@ -1,10 +1,8 @@
-package fr.speleize.civilizationvi_scrollkit.database;
+package fr.speleize.civilizationvi_scrollkit.database.ressources;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -35,6 +33,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_RESSOURCES);
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
         db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
 
     }
