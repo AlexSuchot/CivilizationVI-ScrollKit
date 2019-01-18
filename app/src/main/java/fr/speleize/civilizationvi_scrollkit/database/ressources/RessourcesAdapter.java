@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.List;
 
 import fr.speleize.civilizationvi_scrollkit.R;
@@ -35,15 +36,13 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
     public void onBindViewHolder(RessourcesViewHolder ressourcesViewHolder, int position) {
         ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
 
-
-
+        ressourcesViewHolder.getImageViewImage().setImageResource(R.drawable.allemagnelogo);
 
         ressourcesViewHolder.getTextViewDescription().setText(listRessources.get(position).getDescription());
 
-        ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
+        ressourcesViewHolder.getTextViewBonus().setText(listRessources.get(position).getBonus());
 
-        ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
-
+        ressourcesViewHolder.getTextViewTypeOfRessources().setText(listRessources.get(position).getTypeOfRessource());
 
 
     }
