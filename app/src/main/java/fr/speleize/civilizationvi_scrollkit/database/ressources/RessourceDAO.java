@@ -20,7 +20,11 @@ public class RessourceDAO {
     public List<Ressource> getListRessources(Context context) {
         // projection (colonnes utilisées après la requète) :
         String[] projection = {BaseContrat.RessourcesContrat._ID,
-                BaseContrat.RessourcesContrat.COLONNE_NAME};
+                BaseContrat.RessourcesContrat.COLONNE_NAME,
+                BaseContrat.RessourcesContrat.COLONNE_DESCRIPTION,
+                BaseContrat.RessourcesContrat.COLONNE_IMAGE,
+                BaseContrat.RessourcesContrat.COLONNE_BONUS,
+                BaseContrat.RessourcesContrat.COLONNE_TYPEOFRESSOURCE};
 
         // tri :
         String tri = BaseContrat.RessourcesContrat.COLONNE_NAME + " ASC ";
