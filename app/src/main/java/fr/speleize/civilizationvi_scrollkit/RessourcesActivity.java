@@ -37,6 +37,7 @@ public class RessourcesActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.list_ressources);
         recyclerView.setHasFixedSize(true);
 
+
         // layoutmanager :
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
