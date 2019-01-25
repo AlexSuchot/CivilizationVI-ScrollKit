@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_RESSOURCES);
-        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'content/civslogo/allemagneLogo.png', '+2 de production', 'bonus')");
         db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
         db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
         db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.List;
 
@@ -43,8 +44,9 @@ public class RessourcesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // adapter :
-        ressourcesAdapter = new RessourcesAdapter(listRessourcesDTO);
+        ressourcesAdapter = new RessourcesAdapter(listRessourcesDTO, this);
         recyclerView.setAdapter(ressourcesAdapter);
+        Log.e("imageView state :", listRessourcesDTO.get(0).getImage());
     }
 
 }
