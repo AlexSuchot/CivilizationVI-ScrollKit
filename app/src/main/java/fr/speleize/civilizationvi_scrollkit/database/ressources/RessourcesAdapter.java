@@ -56,19 +56,13 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
     public void onBindViewHolder(RessourcesViewHolder ressourcesViewHolder, int position) {
         ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
 
-        //  chemin vers /data/data/fr.speleize.civilizationvi_scrollkit/app_<logos> :
-        ContextWrapper contextWrapper = new ContextWrapper(activity);
-        File repertoire = contextWrapper.getDir("logos", Context.MODE_PRIVATE);
-        //File fileImage = new File(repertoire, listRessources.get(position).getImage());
-
         String fileImage = listRessources.get(position).getImage();
 
-        //chemin vers /data/data/com.monentreprise.monapplication/app_<repertoire> :
         Picasso.with(activity)
                 .load(fileImage)
                 .into(ressourcesViewHolder.getImageViewImage());
 
-        ressourcesViewHolder.getTextViewDescription().setText(listRessources.get(position).getDescription());
+        //ressourcesViewHolder.getTextViewDescription().setText(listRessources.get(position).getDescription());
 
         ressourcesViewHolder.getTextViewBonus().setText(listRessources.get(position).getBonus());
 

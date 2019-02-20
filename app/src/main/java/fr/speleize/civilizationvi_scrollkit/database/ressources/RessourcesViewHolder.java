@@ -26,7 +26,7 @@ public class RessourcesViewHolder extends RecyclerView.ViewHolder {
     public RessourcesViewHolder(View itemView) {
         super(itemView);
         textViewName = itemView.findViewById(R.id.name);
-        textViewDescription = itemView.findViewById(R.id.description);
+        //textViewDescription = itemView.findViewById(R.id.description);
         imageViewImage = itemView.findViewById(R.id.image);
         textViewBonus = itemView.findViewById(R.id.bonus);
         textViewTypeOfRessources = itemView.findViewById(R.id.typeOfRessource);
