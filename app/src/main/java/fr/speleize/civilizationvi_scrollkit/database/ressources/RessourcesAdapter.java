@@ -2,6 +2,7 @@ package fr.speleize.civilizationvi_scrollkit.database.ressources;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import fr.speleize.civilizationvi_scrollkit.R;
@@ -33,8 +36,6 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
     public RessourcesAdapter(List<Ressource> listRessources, Activity activity) {
         this.listRessources = listRessources;
         this.activity = activity;
-
-
     }
 
     @Override
@@ -43,27 +44,28 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
         return new RessourcesViewHolder(viewRessources);
 
     }
-    public class activity extends Activity{
+
+    public class activity extends Activity {
         public void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
-
         }
-
     }
 
     @Override
     public void onBindViewHolder(RessourcesViewHolder ressourcesViewHolder, int position) {
         ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
 
-        // Ne fonctionne pas car le ressource adapter n'est pas une activité :
-        //ressourcesViewHolder.getImageViewImage().setImageResource(getResources().getIdentifier("","drawable",getPackageName() ));
-        // Fonctionne mais retourne toujours la même image :
+        //  chemin vers /data/data/fr.speleize.civilizationvi_scrollkit/app_<logos> :
+        ContextWrapper contextWrapper = new ContextWrapper(activity);
+        File repertoire = contextWrapper.getDir("logos", Context.MODE_PRIVATE);
+        //File fileImage = new File(repertoire, listRessources.get(position).getImage());
 
+        String fileImage = listRessources.get(position).getImage();
 
+        //chemin vers /data/data/com.monentreprise.monapplication/app_<repertoire> :
         Picasso.with(activity)
-                .load("file://"+listRessources.get(position).getImage())
-                .fit()
+                .load(fileImage)
                 .into(ressourcesViewHolder.getImageViewImage());
 
         ressourcesViewHolder.getTextViewDescription().setText(listRessources.get(position).getDescription());
@@ -71,8 +73,6 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
         ressourcesViewHolder.getTextViewBonus().setText(listRessources.get(position).getBonus());
 
         ressourcesViewHolder.getTextViewTypeOfRessources().setText(listRessources.get(position).getTypeOfRessource());
-
-
     }
 
     @Override

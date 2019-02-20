@@ -33,10 +33,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_TABLE_RESSOURCES);
-        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'content/civslogo/allemagneLogo.png', '+2 de production', 'bonus')");
-        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
-        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
-        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Pierre', 'minerale', 'allemagneLogo', '+2 de production', 'bonus')");
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Banane', 'Ressource bonus trouvable dans la jungle', 'https://vignette.wikia.nocookie.net/civilization/images/1/1b/Bananas_%28Civ6%29.png/revision/latest?cb=20180504132300', '+1 de nourriture, +0,5 habitation, +1 or', 'Bonus')");
+        db.execSQL("INSERT INTO " + BaseContrat.RessourcesContrat.TABLE_RESSOURCES + " VALUES (NULL, 'Banane', 'Ressource bonus trouvable dans les collines, nécessite le minage', 'https://vignette.wikia.nocookie.net/civilization/images/c/ce/Copper_%28Civ6%29.png/revision/latest?cb=20180504132305', '+2 or', 'Bonus')");
 
     }
 
