@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -35,22 +35,22 @@
             android:label="@string/unitsTitle"
             android:parentActivityName=".MainActivity"
             android:theme="@style/DefaultTheme" />
-
         <activity
             android:name=".WondersActivity"
             android:label="Merveilles"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/DefaultTheme"/>
+            android:theme="@style/DefaultTheme" />
         <activity
             android:name=".LeadersActivity"
             android:label="Dirigeants"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/DefaultTheme"/>
+            android:theme="@style/DefaultTheme" />
         <activity
             android:name=".RessourcesActivity"
             android:label="Ressources"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/DefaultTheme"></activity>
+            android:theme="@style/DefaultTheme" />
+        <activity android:name=".database.ressources.SelectedRessourceActivity"></activity>
     </application>
 
 </manifest>

@@ -1,10 +1,15 @@
 package fr.speleize.civilizationvi_scrollkit;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -12,6 +17,7 @@ import fr.speleize.civilizationvi_scrollkit.classes.Ressource;
 import fr.speleize.civilizationvi_scrollkit.database.ressources.DatabaseHelper;
 import fr.speleize.civilizationvi_scrollkit.database.ressources.RessourceDAO;
 import fr.speleize.civilizationvi_scrollkit.database.ressources.RessourcesAdapter;
+import fr.speleize.civilizationvi_scrollkit.database.ressources.SelectedRessourceActivity;
 
 public class RessourcesActivity extends AppCompatActivity {
 
@@ -49,4 +55,17 @@ public class RessourcesActivity extends AppCompatActivity {
         Log.e("imageView state :", listRessourcesDTO.get(0).getImage());
     }
 
+    public void onClickItem(Ressource clickRessource) {
+
+        SharedPreferences getRessource;
+        getRessource = getSharedPreferences("prefRessource", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorRessource = getRessource.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(clickRessource);
+        editorRessource.putString("ressource", json);
+        editorRessource.apply();
+
+        Intent intent = new Intent(this, SelectedRessourceActivity.class);
+        startActivity(intent);
+    }
 }
