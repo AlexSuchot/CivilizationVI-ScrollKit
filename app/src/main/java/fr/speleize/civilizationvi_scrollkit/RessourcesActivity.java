@@ -56,17 +56,5 @@ public class RessourcesActivity extends AppCompatActivity {
         Log.e("imageView state :", listRessourcesDTO.get(0).getImage());
     }
 
-    public void onClickItem(int position) {
-        Ressource ressource = ressourcesAdapter.getItemParPosition(position);
-        SharedPreferences getRessource;
-        getRessource = getSharedPreferences("prefRessource", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editorRessource = getRessource.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(ressource);
-        editorRessource.putString("ressource", json);
-        editorRessource.apply();
 
-        Intent intent = new Intent(this, SelectedRessourceActivity.class);
-        startActivity(intent);
-    }
 }

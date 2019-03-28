@@ -3,6 +3,8 @@ package fr.speleize.civilizationvi_scrollkit.database.ressources;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,7 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -57,28 +61,16 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
 
     @Override
     public void onBindViewHolder(RessourcesViewHolder ressourcesViewHolder, int position) {
+        onClick(getItemParPosition(position), ressourcesViewHolder);
+
         ressourcesViewHolder.getTextViewName().setText(listRessources.get(position).getName());
-
         String fileImage = listRessources.get(position).getImage();
-
         Picasso.with(ressourcesActivity)
                 .load(fileImage)
                 .into(ressourcesViewHolder.getImageViewImage());
-
         //ressourcesViewHolder.getTextViewDescription().setText(listRessources.get(position).getDescription());
-
         ressourcesViewHolder.getTextViewBonus().setText(listRessources.get(position).getBonus());
-
         ressourcesViewHolder.getTextViewTypeOfRessources().setText(listRessources.get(position).getTypeOfRessource());
-    }
-    /**
-     * Retourne le mémo à la position voulue.
-     * @param position Position
-     * @return Mémo
-     */
-    public Ressource getItemParPosition(int position)
-    {
-        return listRessources.get(position);
     }
 
     @Override
@@ -86,29 +78,33 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
         return listRessources.size();
     }
 
-    class RessourceViewHolder extends RecyclerView.ViewHolder {
-        TextView ressourceName = null;
-        TextView ressourceBonus = null;
-        TextView ressourceDescription = null;
-        TextView ressourceType = null;
-
-
-        RessourceViewHolder(final View itemView) {
-            super(itemView);
-            ressourceName = itemView.findViewById(R.id.name);
-            ressourceBonus = itemView.findViewById(R.id.bonus);
-            ressourceDescription = itemView.findViewById(R.id.description);
-            ressourceType = itemView.findViewById(R.id.typeOfRessource);
-
-            // listener :
-            itemView.setOnClickListener( new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    ressourcesActivity.onClickItem(getAdapterPosition());
-                }
-            });
-        }
+    /**
+     * Retourne la ressource à la position voulue.
+     *
+     * @param position Position
+     * @return Ressources
+     */
+    public Ressource getItemParPosition(int position) {
+        return listRessources.get(position);
     }
+
+    public void onClick(final Ressource ressource, final RessourcesViewHolder holder) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(ressourcesActivity, ressource.getBonus(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(holder.itemView.getContext(), SelectedRessourceActivity.class);
+                intent.putExtra( "name", ressource.getName());
+                intent.putExtra("description", ressource.getDescription());
+                intent.putExtra("bonus", ressource.getBonus());
+                intent.putExtra("typeOfRessource", ressource.getTypeOfRessource());
+                intent.putExtra("image", ressource.getImage());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+
+    }
+
 }
