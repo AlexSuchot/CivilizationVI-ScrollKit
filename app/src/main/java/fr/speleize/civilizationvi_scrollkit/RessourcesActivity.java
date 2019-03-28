@@ -51,17 +51,18 @@ public class RessourcesActivity extends AppCompatActivity {
 
         // adapter :
         ressourcesAdapter = new RessourcesAdapter(listRessourcesDTO, this);
+
         recyclerView.setAdapter(ressourcesAdapter);
         Log.e("imageView state :", listRessourcesDTO.get(0).getImage());
     }
 
-    public void onClickItem(Ressource clickRessource) {
-
+    public void onClickItem(int position) {
+        Ressource ressource = ressourcesAdapter.getItemParPosition(position);
         SharedPreferences getRessource;
         getRessource = getSharedPreferences("prefRessource", Context.MODE_PRIVATE);
         SharedPreferences.Editor editorRessource = getRessource.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(clickRessource);
+        String json = gson.toJson(ressource);
         editorRessource.putString("ressource", json);
         editorRessource.apply();
 

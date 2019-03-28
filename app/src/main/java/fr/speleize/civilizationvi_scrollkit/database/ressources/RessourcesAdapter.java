@@ -71,7 +71,15 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
 
         ressourcesViewHolder.getTextViewTypeOfRessources().setText(listRessources.get(position).getTypeOfRessource());
     }
-
+    /**
+     * Retourne le mémo à la position voulue.
+     * @param position Position
+     * @return Mémo
+     */
+    public Ressource getItemParPosition(int position)
+    {
+        return listRessources.get(position);
+    }
 
     @Override
     public int getItemCount() {
@@ -87,21 +95,18 @@ public class RessourcesAdapter extends RecyclerView.Adapter<RessourcesViewHolder
 
         RessourceViewHolder(final View itemView) {
             super(itemView);
-
             ressourceName = itemView.findViewById(R.id.name);
-
             ressourceBonus = itemView.findViewById(R.id.bonus);
-
             ressourceDescription = itemView.findViewById(R.id.description);
             ressourceType = itemView.findViewById(R.id.typeOfRessource);
 
             // listener :
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener( new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View view) {
-
-                    Ressource clickRessource = listRessources.get(getAdapterPosition());
-                    ressourcesActivity.onClickItem(clickRessource);
+                public void onClick(View view)
+                {
+                    ressourcesActivity.onClickItem(getAdapterPosition());
                 }
             });
         }

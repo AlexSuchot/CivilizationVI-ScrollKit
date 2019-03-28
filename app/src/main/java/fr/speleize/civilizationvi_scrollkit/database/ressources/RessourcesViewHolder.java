@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import fr.speleize.civilizationvi_scrollkit.R;
+import fr.speleize.civilizationvi_scrollkit.RessourcesActivity;
 
 public class RessourcesViewHolder extends RecyclerView.ViewHolder {
 
@@ -30,6 +31,7 @@ public class RessourcesViewHolder extends RecyclerView.ViewHolder {
         imageViewImage = itemView.findViewById(R.id.image);
         textViewBonus = itemView.findViewById(R.id.bonus);
         textViewTypeOfRessources = itemView.findViewById(R.id.typeOfRessource);
+
     }
 
     public MenuView.ItemView getRessourcesView() {
